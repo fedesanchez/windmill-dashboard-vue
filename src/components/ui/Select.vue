@@ -9,45 +9,44 @@ const disabledStyle = select.disabled
 const selectStyle = select.select
 
 function hasValidation(valid) {
-    return valid !== undefined
+  return valid !== undefined
 }
 
 function validationStyle(valid) {
-    if (hasValidation(valid)) {
-        return valid ? validStyle : invalidStyle
-    }
-    return ''
+  if (hasValidation(valid)) {
+    return valid ? validStyle : invalidStyle
+  }
+  return ''
 }
 
 const props = defineProps({
-    valid: {
-        type: Boolean,
-        default: undefined
-    },
-    disabled: {
-        type: Boolean,
-        default: false
-    },
-    multiple: {
-        type: Boolean,
-        default: false
-    }
+  valid: {
+    type: Boolean,
+    default: undefined
+  },
+  disabled: {
+    type: Boolean,
+    default: false
+  },
+  multiple: {
+    type: Boolean,
+    default: false
+  }
 })
 
 const cls = [
-    baseStyle,
-    // don't apply activeStyle if has valid or disabled
-    !hasValidation(props.valid) && !props.disabled && activeStyle,
-    // don't apply disabledStyle if has valid
-    !hasValidation(props.valid) && props.disabled && disabledStyle,
-    validationStyle(props.valid),
-    !props.multiple && selectStyle,
+  baseStyle,
+  // don't apply activeStyle if has valid or disabled
+  !hasValidation(props.valid) && !props.disabled && activeStyle,
+  // don't apply disabledStyle if has valid
+  !hasValidation(props.valid) && props.disabled && disabledStyle,
+  validationStyle(props.valid),
+  !props.multiple && selectStyle
 ]
 </script>
 
-
-<template>        <select :class="cls" :multiple="multiple" :disabled="disabled">
-        <slot/>
-    </select>
+<template>
+  <select :class="cls" :multiple="multiple" :disabled="disabled">
+    <slot />
+  </select>
 </template>
-  

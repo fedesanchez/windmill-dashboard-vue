@@ -14,6 +14,6 @@ const baseStyle = 'p-3 rounded-full'
 
 <template>
   <div :class="[baseStyle, iconColorClass, bgColorClass]">
-      <slot ></slot>
+    <slot></slot>
   </div>
 </template>

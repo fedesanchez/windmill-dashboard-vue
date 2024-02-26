@@ -5,4 +5,3 @@ import PageTitle from '../components/Typography/PageTitle.vue'
 <template>
   <PageTitle>Blank</PageTitle>
 </template>
-

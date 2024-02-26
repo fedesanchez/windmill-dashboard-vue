@@ -5,7 +5,7 @@ const cls = modalFooter.base
 </script>
 
 <template>
-    <footer :class="cls">
-        <slot />
-    </footer>
+  <footer :class="cls">
+    <slot />
+  </footer>
 </template>

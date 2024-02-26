@@ -2,16 +2,14 @@
 import { Button } from '@/components/ui'
 
 const props = defineProps({
-    page: String | Number,
-    isActive: { type: Boolean, default: false },
-    onClick: Function
+  page: String | Number,
+  isActive: { type: Boolean, default: false },
+  onClick: Function
 })
-
 </script>
 
 <template>
-    <Button size="pagination" :layout="isActive? 'primary' : 'link'" @click="onClick">
-        {{page}}
-    </Button>
+  <Button size="pagination" :layout="isActive ? 'primary' : 'link'" @click="onClick">
+    {{ page }}
+  </Button>
 </template>
-

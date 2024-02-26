@@ -6,20 +6,20 @@ const checkStyle = label.check
 const disabledStyle = label.disabled
 
 const props = defineProps({
-    check: Boolean,
-    radio: Boolean,
-    disabled: Boolean
+  check: Boolean,
+  radio: Boolean,
+  disabled: Boolean
 })
 const cls = [
-    baseStyle,
-    // check and radio are interchangeable
-    (props.check || props.radio) && checkStyle,
-    props.disabled && disabledStyle
+  baseStyle,
+  // check and radio are interchangeable
+  (props.check || props.radio) && checkStyle,
+  props.disabled && disabledStyle
 ]
 </script>
 
 <template>
-    <label :class="cls">
-          <slot/>
-    </label>
+  <label :class="cls">
+    <slot />
+  </label>
 </template>

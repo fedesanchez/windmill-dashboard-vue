@@ -1,6 +1,15 @@
 <script setup>
 import {
-  Chart as ChartJS, ArcElement, Tooltip, Legend, CategoryScale, LinearScale, PointElement, LineElement, BarElement} from 'chart.js'
+  Chart as ChartJS,
+  ArcElement,
+  Tooltip,
+  Legend,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  BarElement
+} from 'chart.js'
 import { Doughnut, Line, Bar } from 'vue-chartjs'
 import ChartCard from '../components/Chart/ChartCard.vue'
 import ChartLegend from '../components/Chart/ChartLegend.vue'
@@ -11,16 +20,22 @@ import {
   barOptions,
   doughnutLegends,
   lineLegends,
-  barLegends,
+  barLegends
 } from '../utils/demo/chartsData'
-ChartJS.register(ArcElement, Tooltip, CategoryScale, LinearScale, PointElement, LineElement, BarElement)
+ChartJS.register(
+  ArcElement,
+  Tooltip,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  BarElement
+)
 </script>
-
 
 <template>
   <PageTitle>Charts</PageTitle>
-  <div class="grid gap-6 mb-8 md:grid-cols-2">        
-
+  <div class="grid gap-6 mb-8 md:grid-cols-2">
     <ChartCard title="Lines">
       <Line v-bind="lineOptions" />
       <ChartLegend :legends="lineLegends" />
@@ -33,10 +48,8 @@ ChartJS.register(ArcElement, Tooltip, CategoryScale, LinearScale, PointElement, 
 
     <!-- WARNING: doughnut chart is larger for some reason -->
     <ChartCard title="Doughnut">
-        <Doughnut v-bind="doughnutOptions"/>
-        <ChartLegend :legends="doughnutLegends" />
+      <Doughnut v-bind="doughnutOptions" />
+      <ChartLegend :legends="doughnutLegends" />
     </ChartCard>
-
   </div>
 </template>
- 

@@ -11,50 +11,41 @@ import { ref } from 'vue'
 const isModalOpen = ref(false)
 
 function openModal() {
- isModalOpen.value = true
+  isModalOpen.value = true
 }
 
 function closeModal() {
   isModalOpen.value = false
 }
- 
 </script>
 
+<template>
+  <PageTitle>Modals</PageTitle>
+  <CTA />
 
-    <template>
-      <PageTitle>Modals</PageTitle>
-      <CTA />
+  <div>
+    <Button @click="openModal">Open modal</Button>
+  </div>
 
-      <div>
-        <Button @click="openModal">Open modal</Button>
+  <Modal :isOpen="isModalOpen" :onClose="closeModal">
+    <ModalHeader>Modal header</ModalHeader>
+    <ModalBody>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum et eligendi repudiandae
+      voluptatem tempore!
+    </ModalBody>
+    <ModalFooter>
+      <div className="hidden sm:block">
+        <Button layout="outline" onClick="{closeModal}"> Cancel </Button>
       </div>
-
-      <Modal :isOpen="isModalOpen" :onClose="closeModal">
-        <ModalHeader>Modal header</ModalHeader>
-        <ModalBody>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum et eligendi repudiandae
-          voluptatem tempore!
-        </ModalBody>
-        <ModalFooter>       
-          <div className="hidden sm:block">
-            <Button layout="outline" onClick={closeModal}>
-              Cancel
-            </Button>
-          </div>
-          <div className="hidden sm:block">
-            <Button>Accept</Button>
-          </div>
-          <div className="block w-full sm:hidden">
-            <Button block size="large" layout="outline" onClick={closeModal}>
-              Cancel
-            </Button>
-          </div>
-          <div className="block w-full sm:hidden">
-            <Button block size="large">
-              Accept
-            </Button>
-          </div>
-        </ModalFooter>
-      </Modal>
-    </template>
- 
+      <div className="hidden sm:block">
+        <Button>Accept</Button>
+      </div>
+      <div className="block w-full sm:hidden">
+        <Button block size="large" layout="outline" onClick="{closeModal}"> Cancel </Button>
+      </div>
+      <div className="block w-full sm:hidden">
+        <Button block size="large"> Accept </Button>
+      </div>
+    </ModalFooter>
+  </Modal>
+</template>

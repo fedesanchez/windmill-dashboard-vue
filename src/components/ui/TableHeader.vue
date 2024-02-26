@@ -6,7 +6,7 @@ const cls = [baseStyle]
 </script>
 
 <template>
-    <thead :class="cls">
-        <slot />
-    </thead>
+  <thead :class="cls">
+    <slot />
+  </thead>
 </template>

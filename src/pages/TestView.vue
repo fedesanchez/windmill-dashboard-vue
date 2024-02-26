@@ -1,7 +1,5 @@
-<script setup>
-
-</script>
+<script setup></script>
 
 <template>
-   <p> dfefefe fefefef efef efefe</p>
+  <p>dfefefe fefefef efef efefe</p>
 </template>

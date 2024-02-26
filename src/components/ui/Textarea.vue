@@ -8,39 +8,38 @@ const validStyle = textarea.valid
 const invalidStyle = textarea.invalid
 
 function hasValidation(valid) {
-    return valid !== undefined
+  return valid !== undefined
 }
 
-function validationStyle(valid){
-    if (hasValidation(valid)) {
-        return valid ? validStyle : invalidStyle
-    }
-    return ''
+function validationStyle(valid) {
+  if (hasValidation(valid)) {
+    return valid ? validStyle : invalidStyle
+  }
+  return ''
 }
 
 const props = defineProps({
-    valid: {
-        type: Boolean,
-        default: undefined
-    },
-    disabled: {
-        type: Boolean,
-        default: false
-    },
-    value: String
+  valid: {
+    type: Boolean,
+    default: undefined
+  },
+  disabled: {
+    type: Boolean,
+    default: false
+  },
+  value: String
 })
 
 const cls = [
-    baseStyle,
-    // don't apply activeStyle if has valid or disabled
-    !hasValidation(props.valid) && !props.disabled && activeStyle,
-    // don't apply disabledStyle if has valid
-    !hasValidation(props.valid) && props.disabled && disabledStyle,
-    validationStyle(props.valid)
+  baseStyle,
+  // don't apply activeStyle if has valid or disabled
+  !hasValidation(props.valid) && !props.disabled && activeStyle,
+  // don't apply disabledStyle if has valid
+  !hasValidation(props.valid) && props.disabled && disabledStyle,
+  validationStyle(props.valid)
 ]
 </script>
 
-
-<template>    
-    <textarea :class="cls" :disabled="disabled">{{value}}</textarea>
+<template>
+  <textarea :class="cls" :disabled="disabled">{{ value }}</textarea>
 </template>

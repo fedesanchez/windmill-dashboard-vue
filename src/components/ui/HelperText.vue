@@ -7,31 +7,28 @@ const validStyle = helperText.valid
 const invalidStyle = helperText.invalid
 
 const validationStyle = (valid) => {
-    switch (valid) {
-        case true:
-            return validStyle
-        case false:
-            return invalidStyle
-        default:
-            return ''
-    }
+  switch (valid) {
+    case true:
+      return validStyle
+    case false:
+      return invalidStyle
+    default:
+      return ''
+  }
 }
 
 const props = defineProps({
-    valid: {
-        type: Boolean,
-        default: undefined
-    }
+  valid: {
+    type: Boolean,
+    default: undefined
+  }
 })
 
 const cls = [baseStyle, validationStyle(props.valid)]
-
 </script>
 
-
-<template>   
-    <span :class="cls">
-            <slot />
-    </span>
+<template>
+  <span :class="cls">
+    <slot />
+  </span>
 </template>
-  

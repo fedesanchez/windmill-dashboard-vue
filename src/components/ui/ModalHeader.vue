@@ -5,9 +5,7 @@ const cls = modalHeader.base
 </script>
 
 <template>
-    <p :class="cls">
-        <slot/>      
-    </p>
+  <p :class="cls">
+    <slot />
+  </p>
 </template>
-
-

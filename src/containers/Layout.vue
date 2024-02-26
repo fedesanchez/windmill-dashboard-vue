@@ -6,15 +6,13 @@ import ThemedSuspense from '../components/ThemedSuspense.vue'
 </script>
 
 <template>
-  <div
-      class="flex h-screen bg-gray-50 dark:bg-gray-900"
-      >    
-     <Sidebar />
+  <div class="flex h-screen bg-gray-50 dark:bg-gray-900">
+    <Sidebar />
 
     <div class="flex flex-col flex-1 w-full">
       <LayoutHeader />
       <Main>
-        <Suspense fallback={}>
+        <Suspense fallback="{}">
           <RouterView />
           <template #fallback>
             <ThemedSuspense />
@@ -24,4 +22,3 @@ import ThemedSuspense from '../components/ThemedSuspense.vue'
     </div>
   </div>
 </template>
-
