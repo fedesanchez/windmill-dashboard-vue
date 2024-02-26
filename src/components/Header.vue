@@ -2,10 +2,12 @@
 import { ref } from 'vue'
 import { SearchIcon, MoonIcon, SunIcon, BellIcon, MenuIcon, OutlineCogIcon, OutlinePersonIcon, OutlineLogoutIcon } from '@/icons'
 import { Avatar, Button, Badge, Dropdown, DropdownItem, Input } from '@/components/ui'
-import {theme, toggleTheme} from '../stores/theme'
+import { theme, toggleTheme } from '../stores/theme'
+import { toggleSidebar } from '../stores/sidebar'
 
 const isNotificationsMenuOpen = ref(false)
 const isProfileMenuOpen = ref(false)
+
 
 function handleNotificationsClick() {
   isNotificationsMenuOpen.value = !isNotificationsMenuOpen.value
@@ -25,11 +27,11 @@ function showAlert(msg) {
   <header class="z-40 py-4 bg-white shadow-bottom dark:bg-gray-800">
     <div class="container flex items-center justify-between h-full px-6 mx-auto text-purple-600 dark:text-purple-300">    
       <button
-            className="p-1 mr-5 -ml-1 rounded-md lg:hidden focus:outline-none focus:shadow-outline-purple"
-            onClick={toggleSidebar}
+            class="p-1 mr-5 -ml-1 rounded-md lg:hidden focus:outline-none focus:shadow-outline-purple"
+            @click="toggleSidebar"
             aria-label="Menu"
           >
-            <MenuIcon className="w-6 h-6" aria-hidden="true" />
+            <MenuIcon class="w-6 h-6" aria-hidden="true" />
       </button>
       
       <div class="flex justify-center flex-1 lg:mr-32">
