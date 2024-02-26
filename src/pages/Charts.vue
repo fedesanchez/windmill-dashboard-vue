@@ -17,15 +17,9 @@ ChartJS.register(ArcElement, Tooltip, CategoryScale, LinearScale, PointElement, 
 </script>
 
 
-
 <template>
   <PageTitle>Charts</PageTitle>
-
-  <div className="grid gap-6 mb-8 md:grid-cols-2">
-    <ChartCard title="Doughnut">
-      <Doughnut v-bind="doughnutOptions"/>
-      <ChartLegend :legends="doughnutLegends" />
-    </ChartCard>
+  <div class="grid gap-6 mb-8 md:grid-cols-2">        
 
     <ChartCard title="Lines">
       <Line v-bind="lineOptions" />
@@ -36,6 +30,13 @@ ChartJS.register(ArcElement, Tooltip, CategoryScale, LinearScale, PointElement, 
       <Bar v-bind="barOptions" />
       <ChartLegend :legends="barLegends" />
     </ChartCard>
+
+    <!-- WARNING: doughnut chart is larger for some reason -->
+    <ChartCard title="Doughnut">
+        <Doughnut v-bind="doughnutOptions"/>
+        <ChartLegend :legends="doughnutLegends" />
+    </ChartCard>
+
   </div>
 </template>
  
