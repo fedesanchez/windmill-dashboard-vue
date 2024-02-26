@@ -4,6 +4,11 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
+      name: 'Default',
+      path: '/',
+      redirect: { name: 'Dashboard' }
+    },
+    {
       path: '/app/dashboard',
       name: 'Dashboard',
       component: () => import('@/pages/Dashboard.vue')
