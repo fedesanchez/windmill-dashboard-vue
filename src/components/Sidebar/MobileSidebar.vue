@@ -1,8 +1,7 @@
 <script setup>
-import { isSidebarOpen, closeSidebar } from '../../stores/sidebar'
+import { isSidebarOpen, closeSidebar } from '@/stores/sidebar'
 import SidebarContent from './SidebarContent.vue'
-import { Backdrop } from '../ui'
-console.log(isSidebarOpen.value)
+import { Backdrop } from '@/components/ui'
 </script>
 
 <template>

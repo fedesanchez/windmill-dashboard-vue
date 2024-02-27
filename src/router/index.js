@@ -6,6 +6,31 @@ const router = createRouter({
     {
       name: 'Default',
       path: '/',
+      redirect: { name: 'Forgot Password' },
+      children: [
+        {
+          path: '/login',
+          name: 'Login',
+          meta: { layout: 'NoLayout' }, //This is important to ignore base layout (App.vue)
+          component: () => import('@/pages/Login.vue')
+        },
+        {
+          path: '/create-account',
+          name: 'Create Account',
+          meta: { layout: 'NoLayout' },
+          component: () => import('@/pages/CreateAccount.vue')
+        },
+        {
+          path: '/forgot-password',
+          name: 'Forgot Password',
+          meta: { layout: 'NoLayout' },
+          component: () => import('@/pages/ForgotPassword.vue')
+        }
+      ]
+    },
+    {
+      name: 'App',
+      path: '/app',
       redirect: { name: 'Dashboard' }
     },
     {
@@ -43,22 +68,6 @@ const router = createRouter({
       name: 'Tables',
       component: () => import('@/pages/Tables.vue')
     },
-    /* 
-    {
-      path: '/login',
-      name: 'Login',
-      component: () => import('@/pages/Login.vue')
-    },
-    {
-      path: '/create-account',
-      name: 'Create Account',
-      component: () => import('@/pages/CreateAccount.vue')
-    },
-    {
-      path: '/forgot-password',
-      name: 'Forgot Password',
-      component: () => import('@/pages/ForgotPassword.vue')
-    },*/
     {
       path: '/app/404',
       name: '404',
