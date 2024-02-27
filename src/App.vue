@@ -10,7 +10,7 @@ import ThemedSuspense from '@/components/ThemedSuspense.vue'
     </div>
     <Layout v-else>
       <RouterView />
-    </Layout>    
+    </Layout>
     <template #fallback>
       <ThemedSuspense />
     </template>
