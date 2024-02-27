@@ -2,11 +2,20 @@
 
 This is a Vue version of [windmill-dashboard-react](https://github.com/estevanmaito/windmill-dashboard-react/) made by Estevan Maito wich is a complete application (not a template), built on top of React, with all tiny details taken care of so you just need to bring the data to feed it.
 
-## Links
+## Original project
 
-🚀 [Site](https://windmillui.com/)
-🚀 [Estevan Maito](https://twitter.com/estevanmaito)
-🚀 [React version live](https://windmillui.com/dashboard-react)
+- 🔗 [Site](https://windmillui.com/)
+- ✉️ [Estevan Maito](https://twitter.com/estevanmaito)
+- 🚀 [React version live](https://windmillui.com/dashboard-react)
+
+## Usage
+
+```bash
+npm install
+npm run dev
+
+🚀 Go to http://localhost:5173/
+```
 
 ## 📦 Features
 
